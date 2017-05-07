@@ -15,12 +15,14 @@
               ?>
               <br>
               <br>
+  <div align="center">
+  <h1>Realice su Busqueda.!</h1>
 		<form action="proceso.php" method="GET">
 			<input type="text" name="dato">
 			<button type="submit">enviar</button>
 		</form>
 
-		<table class="table table-hover rwd_auto" >
+		<table class="table table-hover rwd_auto" ><br>
                 <thead>
                  <tr>
                     <th>Codigo</th>
@@ -49,6 +51,6 @@
               mysqli_close($conexion);
               ?>
 
-
+</div>
 	</body>
 </html>

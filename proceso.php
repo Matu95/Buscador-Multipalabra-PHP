@@ -4,6 +4,7 @@ $dato=$_GET["dato"];
 
 //trim me va a borrar los espacios vacios al principio y al final de la oracion esto lo hago para depurar la cadena xq luego la usare para separar la cadena y guardarla en variables, no le des mucha bola esto en laravel habria que hacerlo para evitar errores de busqueda pero despues vemos ;)
 $cadena_formateada = trim($dato);
+echo "<div align='center'>";
 echo "La cadena original es esta: '".$dato."' y la formateada es esta otra: '".$cadena_formateada."'";
 echo "<br>";//LA VIEJA CONFIABLE xD!!
 echo "<br>";
@@ -80,16 +81,17 @@ echo "<br>";
  }
  else{
  	$query="SELECT * FROM personas WHERE cod LIKE '%".$caracter0."%' OR nombre LIKE '%".$caracter0."%' OR deuda LIKE '%".$caracter0."%' OR sexo LIKE '%".$caracter0."%' AND cod LIKE '%".$caracter1."%' OR nombre LIKE '%".$caracter1."%' OR deuda LIKE '%".$caracter1."%' OR sexo LIKE '%".$caracter1."%' AND cod LIKE '%".$caracter2."%' OR nombre LIKE '%".$caracter2."%' OR deuda LIKE '%".$caracter2."%' OR sexo LIKE '%".$caracter2."%' AND cod LIKE '%".$caracter3."%' OR nombre LIKE '%".$caracter3."%' OR deuda LIKE '%".$caracter3."%' OR sexo LIKE '%".$caracter3."%'";
- 	echo "LEO cuatro CADENAS";
+ 	echo "LEO CUATRO CADENAS";
  }
 
 
 $resultado=mysqli_query($conexion,$query);
 $fila=mysqli_fetch_row($resultado); $resultado;
  ?>
-
  <div class="container">
 <div class="col-sm-12" style=" height : 400px; overflow : auto;">
+
+<br><h2>Resultado de su busqueda: <?php echo $dato; ?></h2>
              <table class="table table-hover" >
                 <thead>
                  <tr>
@@ -139,5 +141,10 @@ $fila=mysqli_fetch_row($resultado); $resultado;
               mysqli_close($conexion);
               //eso es todo guashin!!
               ?>
+              <button><a href="index.php">Volver</a></button>
 </div>
 </div>
+
+<?php 
+echo "</div>";
+ ?>
